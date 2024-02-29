@@ -11,6 +11,16 @@ export class Day2Component {
   highlightColor = 'white';
   isStyleApplied = false;
 
+  // The message from child component
+  msgFromChild = '';
+
+  receiveMessage(msg: string) {
+    this.msgFromChild = msg;
+  }
+
+  // Used in the parent to child component communication
+  channelNameInParent: string = 'Tasha Accounts';
+
   // Used in the ngFor directive
   names = [
     'Wesley Wanyama',

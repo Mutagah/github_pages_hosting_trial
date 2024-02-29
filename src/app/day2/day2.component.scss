@@ -1,7 +1,5 @@
 .float-container {
-  width: 75%;
-  margin: 2rem auto;
-  padding: 1.5rem;
+  margin: 0 auto;
 }
 h1 {
   text-align: center;
@@ -9,8 +7,7 @@ h1 {
 }
 .child-container {
   float: left;
-  width: 50%;
-  padding: 2rem;
+  width: 45%;
 }
 .child-container:first-of-type {
   border-right: 2px solid black;

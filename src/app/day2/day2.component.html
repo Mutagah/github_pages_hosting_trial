@@ -75,5 +75,18 @@
     </div>
   </div>
 
-  <div class="child-container"></div>
+  <div class="child-container">
+    <h2 id="heading1">Communication between components</h2>
+    <h2>Parent to Class communication</h2>
+    <p>Parent Component in this case is day2Component</p>
+    <input type="text" [(ngModel)]="channelNameInParent" />
+    <app-day2bchild
+      [channelName]="channelNameInParent"
+      (sendMessageEmitter)="receiveMessage($event)"
+    ></app-day2bchild>
+    <p>
+      Type the input in the child component and view it in the parent
+      Component:{{ "" + msgFromChild }}
+    </p>
+  </div>
 </div>
