@@ -8,6 +8,7 @@ h1 {
 .child-container {
   float: left;
   width: 45%;
+  padding: 1rem;
 }
 .child-container:first-of-type {
   border-right: 2px solid black;

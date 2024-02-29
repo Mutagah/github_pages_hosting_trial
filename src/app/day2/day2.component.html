@@ -84,9 +84,35 @@
       [channelName]="channelNameInParent"
       (sendMessageEmitter)="receiveMessage($event)"
     ></app-day2bchild>
+
     <p>
       Type the input in the child component and view it in the parent
       Component:{{ "" + msgFromChild }}
     </p>
+    <h2>Services and Dependency Injection</h2>
+
+    <p>
+      Services, a typescript class which is mainly used for sharing data or
+      functionality throughout the application.
+    </p>
+
+    <p>Services should either be provided in component or in module</p>
+
+    <p>
+      Services in component : Providing sevices in a component would mean that
+      the child components and the parent components use the same instance
+    </p>
+
+    <p>
+      Services in Modules : Providing the service in module, then all the
+      components inside that module will get the same instance of that service
+    </p>
+
+    <p>
+      Services in root module : The entire application will have only one
+      instance of that service.
+    </p>
+
+    <p>A service can be injected into another service.</p>
   </div>
 </div>
