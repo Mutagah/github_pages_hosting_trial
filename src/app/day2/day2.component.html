@@ -1,1 +1,79 @@
-<p>day2 works!</p>
+<div class="float-container">
+  <h1>{{ title }}</h1>
+
+  <div class="child-container">
+    <!-- Structural directives -->
+    <!-- They are used to modify the Document Object Model (DOM) -->
+    <h2 id="heading1">Structural directives</h2>
+
+    <!-- ngIf accepts any variable that gets transformed to a boolean -->
+    <h2>The ngIf directive</h2>
+    <ul>
+      <li>Used to render things conditionally</li>
+    </ul>
+    <button (click)="approve(true)">Approve</button>
+    <button (click)="approve(false)">Reject</button>
+    <div>
+      <div *ngIf="isApproved; else elseBlock">
+        <i>Your application has been approved</i>
+      </div>
+      <ng-template #elseBlock
+        ><i>Your application has been rejected</i></ng-template
+      >
+
+      <!-- ngFor is used to loop through an array and and display it in html -->
+      <h2>The ngFor directive</h2>
+      <ul>
+        <li>Used when you want to loop through an array</li>
+      </ul>
+      <p class="mapped-list" *ngFor="let name of names; let i = index">
+        {{ i + 1 }}-{{ name }}
+      </p>
+    </div>
+
+    <!-- ngSwitch direcive on a container specifies an expression to match against. The expressions to match are provided by ngSwitchCase directives  -->
+    <!-- Not more than one directive can be used for one DOM element -->
+    <h2>The ngSwitch directive</h2>
+    <div class="switchDirectiveInput">
+      <input type="number" [(ngModel)]="luckyNumber" />
+
+      <div [ngSwitch]="luckyNumber">
+        <p *ngSwitchCase="1">Strong</p>
+        <p *ngSwitchCase="2">Weak</p>
+        <p *ngSwitchCase="3">Fool</p>
+        <p *ngSwitchCase="4">Intelligent</p>
+        <p *ngSwitchCase="5">Brave</p>
+        <p *ngSwitchDefault>Enter numbers from 1 to 5</p>
+      </div>
+    </div>
+    <h2 id="heading1">Attribute directives</h2>
+    <!-- They do not modify the DOM instead they modify the properties of the DOM -->
+    <h2>The ngClass directive</h2>
+    <!-- The ngClass actually uses class names of your css file -->
+    <div>
+      <p
+        [ngClass]="{
+          red: highlightColor === 'red',
+          'green-color': highlightColor === 'green'
+        }"
+      >
+        Click any button to highlight
+      </p>
+    </div>
+    <button (click)="highlight('red')">Red</button>
+    <button (click)="highlight('green')">Green</button>
+
+    <div>
+      <h2 id="heading1">The ngStyle directive</h2>
+      <!-- The ngStyle uses the css properties -->
+      <div>
+        <p [ngStyle]="{ color: isStyleApplied === true ? 'red' : 'black' }">
+          Click the button to toggle the style!
+        </p>
+      </div>
+      <button (click)="toggleStyle()">Toggle</button>
+    </div>
+  </div>
+
+  <div class="child-container"></div>
+</div>
