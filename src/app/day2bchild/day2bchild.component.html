@@ -1,0 +1,9 @@
+<div class="child-display">
+  <h3>From the child component day2bchildComponent</h3>
+  <p>Please suscribe to {{ channelName }}</p>
+
+  <!-- Passing data from child to parent component -->
+  <h2>Child to Parent Component</h2>
+  <p>Here we use event binding and event emitter approach</p>
+  <input type="text" (input)="sendMessageToParent($event)" />
+</div>
