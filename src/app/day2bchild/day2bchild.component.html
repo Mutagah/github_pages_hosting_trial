@@ -6,4 +6,14 @@
   <h2>Child to Parent Component</h2>
   <p>Here we use event binding and event emitter approach</p>
   <input type="text" (input)="sendMessageToParent($event)" />
+
+  <i>
+    ** The second component is day2bchildComponent used when showcasing the use
+    of services
+  </i>
+  <input type="number" [(ngModel)]="firstNum" (change)="calculate()" />
+  +
+  <input type="number" [(ngModel)]="secondNum" (change)="calculate()" />
+  =
+  {{ output }}
 </div>

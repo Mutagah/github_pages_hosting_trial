@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-day2',
@@ -14,6 +15,7 @@ export class Day2Component {
   // The message from child component
   msgFromChild = '';
 
+  constructor(private sharedService: SharedService){}
   receiveMessage(msg: string) {
     this.msgFromChild = msg;
   }
@@ -47,4 +49,32 @@ export class Day2Component {
   toggleStyle() {
     this.isStyleApplied = !this.isStyleApplied;
   }
+
+  firstNum = 0;
+  secondNum = 0;
+  output = 0;
+
+  // Same variables appear in day2bchild
+  // Motive is to showcase the use of services
+
+  // What would have been done without the use of services
+  /*
+
+  calculate(){
+    this.output = this.firstNum + this.secondNum;
+  }*/
+
+  /*With the use of services */
+
+  calculate() {
+    /* When instatiating a new service on each and every code */
+    // let sharedService = new SharedService();
+    // this.output = sharedService.calculate(this.firstNum, this.secondNum);
+
+    /* When using the dependency injection
+    
+    NB: We have configured shaerdService as a private variable of SharedService type */
+    this.output = this.sharedService.calculate(this.firstNum, this.secondNum)
+  }
+
 }

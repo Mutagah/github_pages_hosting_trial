@@ -89,7 +89,7 @@
       Type the input in the child component and view it in the parent
       Component:{{ "" + msgFromChild }}
     </p>
-    <h2>Services and Dependency Injection</h2>
+    <h2>Services</h2>
 
     <p>
       Services, a typescript class which is mainly used for sharing data or
@@ -113,7 +113,50 @@
       instance of that service.
     </p>
 
-    <p>A service can be injected into another service and in such cases it is necessary to add injectable decorator to all services.</p>
+    <p>
+      A service can be injected into another service and in such cases it is
+      necessary to add injectable decorator to all services.
+    </p>
+    <h2>Using of services</h2>
+    <p>My first component is: day2.component</p>
+    <p>
+      My second component is: day2bchild.component >> It should not necessarily
+      be a component with parent and child relationship.
+    </p>
+    <input type="number" [(ngModel)]="firstNum" (change)="calculate()" />
+    +
+    <input type="number" [(ngModel)]="secondNum" (change)="calculate()" />
+    =
+    {{ output }}
 
+    <p>Use of services: Code reuse and cross component communication</p>
+
+    <p>
+      NB: Using new keyword for every component will create a separate instance
+      of the service hence this is wrong, since services seek to communicate
+      between components especially when the components are not related to each
+      other.
+    </p>
+    <p>
+      New keyword is not ideal to initialize a service and this is what
+      dependency injection seeks to solve.
+    </p>
+    <div>
+      <h2>Dependency Injection</h2>
+      <h4 style="font-weight: lighter">
+        Ability to provide a functionality at runtime.
+      </h4>
+      <h4 style="font-weight: lighter">
+        We can inform Angular, the component depends on this service and Angular
+        in turn takes care of instantiating that service.
+      </h4>
+      <div>
+        <input type="number" [(ngModel)]="firstNum" (change)="calculate()" />
+        +
+        <input type="number" [(ngModel)]="secondNum" (change)="calculate()" />
+        =
+        {{ output }}
+      </div>
+    </div>
   </div>
 </div>
