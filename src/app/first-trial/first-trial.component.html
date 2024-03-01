@@ -1,0 +1,36 @@
+<div class="container">
+  <!-- ONE WAY DATA BINDING -->
+
+  <!-- string interpolation -->
+  <h1>{{ title }}</h1>
+  <div class="left-container">
+    <h2 id="heading1">One way data binding demo</h2>
+    <h2>Testing string interpolation</h2>
+    <h3>{{ interpolationOfData() }}</h3>
+
+    <!-- Property binding demo -->
+    <h2>Property binding the value property of an input element</h2>
+    <input type="text" [value]="surName + ' ' + firstName" />
+
+    <!-- Event binding -->
+    <h2>Event binding</h2>
+    <button (click)="changeInputValue()">Change Input Value</button>
+    <button (click)="returnInputValue()">Return Input Value</button>
+  </div>
+
+  <!-- TWO WAY DATA BINDING -->
+
+  <div class="right-container">
+    <h2 id="heading1">Two way data binding demo</h2>
+    <!-- combination of both event binding and property binding would be the long way-->
+    <h2>Two way data binding(the long way) event + property binding</h2>
+    <input type="text" [value]="surName" (input)="twoWayBinding($event)" />
+    <i>Your surname is: {{ surName }}</i>
+
+    <!-- Using ngModel to achieve to way data binding -->
+    <h2>using ngModel to achieve two way data binding</h2>
+    <input type="text" [value]="surName" [(ngModel)]="surName" />
+    <i>Your surname is: {{ surName }}</i>
+  </div>  
+</div>
+

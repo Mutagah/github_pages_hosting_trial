@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { Day2Component } from './day2/day2.component';
 import { Day2bchildComponent } from './day2bchild/day2bchild.component';
+import { FirstTrialComponent } from './first-trial/first-trial.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    FirstTrialComponent,
     HomeComponent,
     Day2Component,
-    Day2bchildComponent,
+    Day2bchildComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

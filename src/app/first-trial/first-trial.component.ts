@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-first-trial',
+  templateUrl: './first-trial.component.html',
+  styleUrls: ['./first-trial.component.scss']
 })
-export class AppComponent {
+export class FirstTrialComponent {
   title = 'Angular Revision';
 
   //property binding > Used when you want to assign dynamic values. 
@@ -33,6 +33,4 @@ export class AppComponent {
     this.surName= event.target.value
   }
   
-
 }
- 
