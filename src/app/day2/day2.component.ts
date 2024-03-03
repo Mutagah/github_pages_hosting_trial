@@ -73,7 +73,7 @@ export class Day2Component {
 
     /* When using the dependency injection
     
-    NB: We have configured shaerdService as a private variable of SharedService type */
+    NB: We have configured sharedService as a private variable of SharedService type */
     this.output = this.sharedService.calculate(this.firstNum, this.secondNum)
   }
 

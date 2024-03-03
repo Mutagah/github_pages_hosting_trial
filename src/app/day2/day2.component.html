@@ -80,6 +80,7 @@
     <h2>Parent to Class communication</h2>
     <p>Parent Component in this case is day2Component</p>
     <input type="text" [(ngModel)]="channelNameInParent" />
+    
     <app-day2bchild
       [channelName]="channelNameInParent"
       (sendMessageEmitter)="receiveMessage($event)"

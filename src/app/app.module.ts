@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { Day2Component } from './day2/day2.component';
 import { Day2bchildComponent } from './day2bchild/day2bchild.component';
 import { FirstTrialComponent } from './first-trial/first-trial.component';
+import { Day3Component } from './day3/day3.component';
+import { DomInteractionComponent } from './dom-interaction/dom-interaction.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { FirstTrialComponent } from './first-trial/first-trial.component';
     FirstTrialComponent,
     HomeComponent,
     Day2Component,
-    Day2bchildComponent
+    Day2bchildComponent,
+    Day3Component,
+    DomInteractionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
