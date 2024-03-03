@@ -1,0 +1,51 @@
+<div class="dom-container">
+  <h2>Dom Interaction</h2>
+  <div class="child-container">
+    <!-- Template Reference Variables  -->
+    <h3>
+      Also known as local reference variable, can be added in any HTML element
+      using the "#" as the first character
+    </h3>
+
+    <h3>
+      Template reference variables can be used to access DOM elements and their
+      properties easily
+    </h3>
+    <h3>
+      Template refence variable can only be used in the HTML template. Inorder
+      to access that in the Typescript component, we need to explicitly pass the
+      reference to Typescript through an event in the html template
+    </h3>
+    <div>
+      <h3>Example: (check the console for the values)</h3>
+      <p #channelName>Channel Name: Tasha Accounts</p>
+      <!-- using template variable in error handling -->
+      <!-- Ensure ngModel is added to your input in such a case as this ensure two way data binding hence myInput can be acessed and used in the html file -->
+      <input type="text" #myInput style="margin: 10px" ngModel />
+      <button
+        (click)="sendInput(myInput, channelName)"
+        [disabled]="myInput.value.length === 0"
+      >
+        Click
+      </button>
+    </div>
+  </div>
+  <div class="child-container">
+    <h3 id="heading3">The @ViewChild decorator</h3>
+    <h3>
+      When you want to access DOM elements before triggering some event we need
+      to use the ViewChild decorator
+    </h3>
+    <h3>
+      @ViewChild accepts two parameters the first one is selector which is
+      mandatory.In this case it is the template reference variable name is our
+      first parameter in the @ViewChild decorator
+    </h3>
+    <h3>
+      When we pass the template reference variable directly, we get access to
+      the element but when accessing it through ViewChild, we can access the
+      element through its reference. In this case the ".nativeElement method"
+    </h3>
+    <h3>Using @ViewChild decorator, we can also access components</h3>
+  </div>
+</div>

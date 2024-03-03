@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { Day2Component } from '../day2/day2.component';
 import { HomeComponent } from '../home/home.component';
 import { FirstTrialComponent } from '../first-trial/first-trial.component';
+import { Day3Component } from '../day3/day3.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,6 +14,10 @@ const routes: Routes = [
     path: 'day2',
     component: Day2Component,
   },
+  {
+    path: 'day3',
+    component: Day3Component
+  }
 ];
 @NgModule({
   declarations: [],
