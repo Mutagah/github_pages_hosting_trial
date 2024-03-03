@@ -1,0 +1,64 @@
+<div class="life-cycle-container">
+  <h2>Life Cycle Hooks</h2>
+  <div class="child-container">
+    <h3 style="text-align: center">
+      For results in this section, please check the console
+    </h3>
+    <h2>ngOnInit</h2>
+    <h3>
+      ngOnInit is invoked when the component has been initialized. It is called
+      only once after the first ngOnChanges
+    </h3>
+    <h3>
+      Mostly is used for doing initializations and once a component is loaded
+      into the DOM, the components constructor and the onInit method are called.
+    </h3>
+    <h3>Constructors are called first</h3>
+
+    <!-- ngOnDestroy -->
+    <h2>ngOnDestroy</h2>
+    <h3>
+      ngOnDestroy will be called once just before component is removed from the
+      DOM.
+    </h3>
+    <h3>If we need any cleaning activities we can do it on onDestroy</h3>
+
+    <button (click)="toggleChild()" class="toggle-button">Toggle Child</button>
+
+    <app-lifecycle-hooks-child
+      *ngIf="isChild"
+      [channelName]="channelName"
+    ></app-lifecycle-hooks-child>
+
+    <!-- ngOnChanges -->
+    <h2>ngOnChanges</h2>
+    <h3>
+      onChanges will be called once before onInit and will be called whenever
+      the data-bound input properties changes.
+    </h3>
+    <h3>
+      Data-bound input is not the normal input in the same component rather it
+      is something coming from outside of that component through @Input.
+    </h3>
+    <h3>ngOnChanges can used to do something if a particular value changes</h3>
+    <input type="text" [(ngModel)]="channelName" />
+
+    <!-- ngDoCheck -->
+    <h2>ngDoCheck</h2>
+    <h3>
+      DoCheck will be invoked when the change detector of the given component is
+      invoked.
+    </h3>
+    <h3>
+      It is called immediately after ngOnChanges on every change detection and
+      immediately after onInit on the first run.
+    </h3>
+
+    <h2>
+      ngOnInit, ngOnDestroy, ngOnChanges and ngDoCheck are general life cycle
+      hooks both present in components and directives.
+    </h2>
+  </div>
+
+  <div class="child-container"></div>
+</div>
