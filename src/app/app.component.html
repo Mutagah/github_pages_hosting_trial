@@ -1,1 +1,11 @@
+<!-- A directive that informs angular where the component is to be rendered -->
+<nav>
+  <!-- Use the routerLink instead of href, as href causes reloading of a page, hence going against single page application -->
+  <button><a routerLink="">Home</a></button>
+  <button><a routerLink="/day1">Day1</a></button>
+  <button><a routerLink="/day2">Day2</a></button>
+  <button><a routerLink="/day3">Day3</a></button>
+  <!-- <button><a routerLink="/day4">Day4</a></button> -->
+</nav>
+
 <router-outlet></router-outlet>
