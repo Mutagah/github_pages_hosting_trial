@@ -10,6 +10,9 @@ import { Day2bchildComponent } from './day2bchild/day2bchild.component';
 import { FirstTrialComponent } from './first-trial/first-trial.component';
 import { Day3Component } from './day3/day3.component';
 import { DomInteractionComponent } from './dom-interaction/dom-interaction.component';
+import { FormsComponent } from './forms/forms.component';
+import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,9 @@ import { DomInteractionComponent } from './dom-interaction/dom-interaction.compo
     Day2bchildComponent,
     Day3Component,
     DomInteractionComponent,
+    FormsComponent,
+    TemplateDrivenFormsComponent,
+    ReactiveFormsComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

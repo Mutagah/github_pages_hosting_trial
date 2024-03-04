@@ -1,0 +1,63 @@
+<div>
+  <h2>Template Driven Forms</h2>
+  <ul>
+    <li>Easy to create</li>
+    <li>Logic is in the template</li>
+    <li>Suitable for simpler forms</li>
+  </ul>
+  <!-- Adding ngForm, basically makes angular recognize this is a form but does not know what controls to consider -->
+  <!-- Use ngModel and add the name properrty when you want to populate the control object -->
+  <!-- <form #myForm="ngForm"> -->
+  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <label>First Name</label>
+    <!-- ngModel is used a directive -->
+    <input
+      type="text"
+      name="firstName"
+      required
+      [ngModel]="'Tasha'"
+      required
+      #firstName="ngModel"
+    /><br />
+    <small *ngIf="!firstName.valid && firstName.touched"
+      >First Name is not valid</small
+    ><br />
+
+    <label>Email Address</label>
+    <!-- ngModel used as a directive -->
+    <!-- The email in this case has one validation error message -->
+    <input
+      type="email"
+      name="email"
+      required
+      email
+      ngModel
+      #emailaddress="ngModel"
+    /><br />
+    <!-- Checks whether the email address error object has anything and if it has anything then does the emailaddress.errors object have the required error -->
+    <!-- To be checked later -->
+
+    <!-- <small *ngIf="emailaddress.errors && emailaddress.touched"
+      >Email address is required</small
+    ><br />
+    <small *ngIf="emailaddress.errors && emailaddress.touched"
+      >Email address should be valid</small
+    ><br /> -->
+
+    <!-- <button (click)="onSubmit(myForm)" type="button">Submit</button> -->
+    <!-- Using form controls to handle validations -->
+    <button type="submit">Submit Details</button>
+    <br />
+  </form>
+  <h5>
+    The best place to run the onSubmit function would be on the form tag using
+    the ngSubmit directive
+  </h5>
+  <h3>ngtouched>> Shows that an input element has been touched</h3>
+  <h3>ng-valid>> shows that an input is valid</h3>
+  <h3>ng-pristine>> shows that the used has changed the existing value.</h3>
+  <h3>
+    If you want to default some value in the checkbox then, you can use property
+    binding to bing the ngModel
+  </h3>
+</div>
