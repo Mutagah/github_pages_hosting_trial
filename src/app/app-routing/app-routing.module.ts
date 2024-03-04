@@ -7,17 +7,26 @@ import { HomeComponent } from '../home/home.component';
 import { FirstTrialComponent } from '../first-trial/first-trial.component';
 import { Day3Component } from '../day3/day3.component';
 
+// Routes an array in which we pass javascript objects
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: '1', redirectTo: 'day1', pathMatch: 'full' },
   { path: 'day1', component: FirstTrialComponent },
+  { path: '2', redirectTo: 'day2', pathMatch: 'full' },
   {
     path: 'day2',
     component: Day2Component,
   },
+  { path: '3', redirectTo: 'day3', pathMatch: 'full' },
   {
     path: 'day3',
-    component: Day3Component
-  }
+    component: Day3Component,
+  },
+  // Handling non existing routes
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
 @NgModule({
   declarations: [],
