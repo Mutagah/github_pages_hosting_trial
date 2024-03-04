@@ -6,6 +6,11 @@ import {
   SimpleChanges,
   Input,
   DoCheck,
+  AfterContentInit,
+  ContentChild,
+  AfterViewChecked,
+  AfterViewInit,
+  AfterContentChecked,
 } from '@angular/core';
 
 @Component({
@@ -14,12 +19,16 @@ import {
   styleUrls: ['./lifecycle-hooks-child.component.scss'],
 })
 export class LifecycleHooksChildComponent
-  implements OnInit, OnDestroy, OnChanges, DoCheck
+  implements OnInit, OnDestroy, OnChanges, DoCheck, AfterContentInit,  AfterContentChecked,AfterViewInit,AfterViewChecked
 {
-  // Constructor are called first
+  /* ContentChild decorator is used to query for the first element or the directive matching the selector from the content DOM of the component.
+  We are using the ContentChild decorator because the targeted data, would otherwise be accessed by ng-content directive.
+  */
+  @ContentChild('projectedContent') projectedContent: any;
   counter = 0;
   interval: any;
   @Input() channelName = '';
+  // Constructor are called first
   constructor() {
     console.log('Child Constructor is called');
   }
@@ -44,6 +53,23 @@ export class LifecycleHooksChildComponent
     console.log('Child onChanges is called');
   }
   ngDoCheck(): void {
-      console.log("Child Docheck is called")
+    console.log('Child Docheck is called');
+  }
+  // Will only be called once after the first doCheck and the variable cannot be accessed till the content is initialized
+  ngAfterContentInit(): void {
+    console.log('In After Content Init');
+    console.log('After Content Init-' + this.projectedContent);
+  }
+  // Called after ngAfterContentInit() and every subsequent ngDoCheck
+  ngAfterContentChecked(): void {
+    console.log('In After Content Checked');
+  }
+  // Called once after the first ngAfterContentChecked
+  ngAfterViewInit(): void {
+    console.log('In After View Init');
+  }
+  // Called once ngAfterViewInit and after every subsequent ngAfterContentChecked
+  ngAfterViewChecked(): void {
+    console.log('In After View Checked');
   }
 }

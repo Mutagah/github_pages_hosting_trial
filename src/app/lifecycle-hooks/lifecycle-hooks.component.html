@@ -58,7 +58,50 @@
       ngOnInit, ngOnDestroy, ngOnChanges and ngDoCheck are general life cycle
       hooks both present in components and directives.
     </h2>
+    <h2>NB: Avoid using ngOnChanges and ngDoCheck in the same componenent</h2>
   </div>
 
-  <div class="child-container"></div>
+  <div class="child-container">
+    <h2>ngAfterContentInit</h2>
+    <h3>ngAfterContentInit will be called only once after the first doCheck</h3>
+    <h3>
+      Content projection : This is when you project some contnet into child from
+      parent. Normally the content is wrapped with the child tags then using
+      ng-content directive in the child component html file, you specify where
+      you want the content to appear.
+    </h3>
+    <h3>
+      Content projection is very useful when we are creating reusable widgets.
+    </h3>
+    <h2 style="text-decoration: underline">
+      Below is a demo on content projection
+    </h2>
+    <!-- <app-lifecycle-hooks-child *ngIf="isChild">
+      <h2 #projectedContent>
+        Use Case of ng-content: Please subscribe to my channel: Tasha Accounts
+      </h2>
+    </app-lifecycle-hooks-child> -->
+
+    <div style="border-top: 2px solid black">
+      <h2>ngAfterContentChecked</h2>
+      <h3>
+        This is called after ngAfterContentInit and every subsequent ngDoCheck
+      </h3>
+    </div>
+    <h2>ngAfterViewInit</h2>
+    <h3>
+      ngAfterViewInit will be called once after the first ngAfterContentChecked.
+    </h3>
+    <h2>ngAfterViewChecked</h2>
+    <h3>
+      ngAfterViewChecked will be called once after ngAfterViewInit and after
+      every subsequent ngAfterContentChecked
+    </h3>
+    <h2>The static in View Child Decorator</h2>
+    <h3>
+      The second parameter on ViewChild or ContentChild which is an object with
+      the words <q>static: true</q>
+      makes content accessibe in the ngOnChanges and ngOnInit itself
+    </h3>
+  </div>
 </div>
