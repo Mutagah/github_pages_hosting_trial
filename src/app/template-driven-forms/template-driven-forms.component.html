@@ -6,7 +6,10 @@
     <li>Suitable for simpler forms</li>
   </ul>
   <!-- Adding ngForm, basically makes angular recognize this is a form but does not know what controls to consider -->
-  <!-- Use ngModel and add the name properrty when you want to populate the control object -->
+  <h3>
+    Use ngModel and add the name properrty when you want to populate the control
+    object
+  </h3>
   <!-- <form #myForm="ngForm"> -->
   <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
     <label>First Name</label>
@@ -55,7 +58,7 @@
   </h5>
   <h3>ngtouched>> Shows that an input element has been touched</h3>
   <h3>ng-valid>> shows that an input is valid</h3>
-  <h3>ng-pristine>> shows that the used has changed the existing value.</h3>
+  <h3>ng-pristine>> shows that the user has changed the existing value.</h3>
   <h3>
     If you want to default some value in the checkbox then, you can use property
     binding to bing the ngModel

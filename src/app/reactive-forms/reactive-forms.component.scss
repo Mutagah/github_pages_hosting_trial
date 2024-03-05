@@ -1,12 +1,21 @@
 h2 {
-    text-align: center;
-    font-weight: lighter;
+  text-align: center;
+  font-weight: lighter;
 }
 
 input {
-    margin: 10px;
+  margin: 10px;
 }
 
 button {
-    margin: 10px;
+  margin: 10px;
+}
+h3 {
+  font-weight: lighter;
+}
+small {
+    color: red;
+}
+input.ng-invalid.ng-touched {
+    border: 2px solid red;
 }
