@@ -10,6 +10,8 @@ import { Day2bchildComponent } from './day2bchild/day2bchild.component';
 import { FirstTrialComponent } from './first-trial/first-trial.component';
 import { Day3Component } from './day3/day3.component';
 import { DomInteractionComponent } from './dom-interaction/dom-interaction.component';
+import { PipesComponent } from './pipes/pipes.component';
+import { InitialsPipe } from './initials.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { DomInteractionComponent } from './dom-interaction/dom-interaction.compo
     Day2bchildComponent,
     Day3Component,
     DomInteractionComponent,
+    PipesComponent,
+    InitialsPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
