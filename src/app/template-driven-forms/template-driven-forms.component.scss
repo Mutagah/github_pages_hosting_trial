@@ -1,0 +1,21 @@
+h2 {
+  text-align: center;
+  font-weight: lighter;
+}
+input {
+  margin: 10px;
+}
+button {
+  margin: 10px;
+}
+// Puts red border on input elements that have classes
+input.ng-invalid.ng-touched {
+  border: 2px solid red;
+}
+h3,
+h5 {
+  font-weight: lighter;
+}
+small {
+  color: red;
+}

@@ -1,0 +1,70 @@
+<div>
+  <h2>Reactive Forms</h2>
+  <ul>
+    <li>Logic is in the component</li>
+    <li>They are more robust, usable, scalable and testable</li>
+    <li>Suitable for complex forms</li>
+  </ul>
+  <h3>We define the structure of the form in the component class</h3>
+  <h3>
+    To bind the form, we use formGroup directive and ensure we import the
+    FormsModule in the import array on the module
+  </h3>
+  <h3>To bind controls in a reactive form we use formControlName</h3>
+  <!-- Reference to the form is not needed like with template driven forms -->
+  <h3>
+    Form Validations in reactive forms is achieved through giving the second
+    argurment in the FormContol method in your typescript file.
+  </h3>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <label>First Name</label>
+    <input type="text" formControlName="firstName" />
+    <h3>
+      This is how we add custom error messages and we get access to the controls
+      using myForm.get() method
+    </h3>
+    <small
+      *ngIf="
+        !myForm.get('firstName')?.valid && myForm.get('firstName')?.touched
+      "
+    >
+      First Name is required </small
+    ><br />
+    <h3>
+      Adding the two vaildations in the email field we will need to specify an
+      array of validators as our second argurment in our FormControl method
+    </h3>
+    <label>Email Address</label>
+    <input type="text" formControlName="email" /><br />
+    <!-- Recap on the error handling techniques -->
+    <small
+      *ngIf="
+        !myForm.get('email')?.errors &&
+        myForm.get('email')?.errors?.['required'] &&
+        myForm.get('email')?.touched
+      "
+      >Email Address is required
+    </small>
+    <small
+      *ngIf="
+        !myForm.get('email')?.errors &&
+        myForm.get('email')?.errors?.['email'] &&
+        myForm.get('email')?.touched
+      "
+      >Email Address should be valid</small
+    >
+    <!-- To disable the button -->
+    <button type="button" [disabled]="!myForm.valid">Submit</button>
+    <br />
+    <!-- <h3>
+      For setting the values, we can use the setValue({ controlAccessNames :
+      'value to be set'}) method. For this to work, you should pass the form
+      control access names in the whole setValue method.
+    </h3>
+    
+    <h3>
+      For updating the values, we can use the patchValue method where we can
+      pass only the intended fields. example :this.myForm.patchValue({readTerms:true})
+    </h3> -->
+  </form>
+</div>

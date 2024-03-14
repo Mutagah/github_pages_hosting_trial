@@ -1,6 +1,6 @@
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -12,6 +12,9 @@ import { Day3Component } from './day3/day3.component';
 import { DomInteractionComponent } from './dom-interaction/dom-interaction.component';
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
 import { LifecycleHooksChildComponent } from './lifecycle-hooks-child/lifecycle-hooks-child.component';
+import { FormsComponent } from './forms/forms.component';
+import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +27,11 @@ import { LifecycleHooksChildComponent } from './lifecycle-hooks-child/lifecycle-
     DomInteractionComponent,
     LifecycleHooksComponent,
     LifecycleHooksChildComponent,
+    FormsComponent,
+    TemplateDrivenFormsComponent,
+    ReactiveFormsComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
