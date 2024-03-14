@@ -6,6 +6,7 @@ import { Day2Component } from '../day2/day2.component';
 import { HomeComponent } from '../home/home.component';
 import { FirstTrialComponent } from '../first-trial/first-trial.component';
 import { Day3Component } from '../day3/day3.component';
+import { Day4Component } from '../day4/day4.component';
 
 // Routes an array in which we pass javascript objects
 const routes: Routes = [
@@ -22,11 +23,15 @@ const routes: Routes = [
     path: 'day3',
     component: Day3Component,
   },
+  {
+    path: 'day4',
+    component: Day4Component,
+  },
   // Handling non existing routes
   {
     path: '**',
     redirectTo: '',
-  },
+  }
 ];
 @NgModule({
   declarations: [],

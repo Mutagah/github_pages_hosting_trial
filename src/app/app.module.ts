@@ -2,6 +2,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+// Import HttpClientModule when you want to use HttpClient
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -15,6 +17,8 @@ import { LifecycleHooksChildComponent } from './lifecycle-hooks-child/lifecycle-
 import { FormsComponent } from './forms/forms.component';
 import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { Day4Component } from './day4/day4.component';
+import { RestfulApiConsumptionComponent } from './restful-api-consumption/restful-api-consumption.component';
 
 @NgModule({
   declarations: [
@@ -29,9 +33,11 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
     LifecycleHooksChildComponent,
     FormsComponent,
     TemplateDrivenFormsComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    Day4Component,
+    RestfulApiConsumptionComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

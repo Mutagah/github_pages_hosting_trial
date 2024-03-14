@@ -1,0 +1,45 @@
+<div class="restful-api">
+  <h2>Angular HTTP Demo</h2>
+  <div class="child-container">
+    <h3>
+      API - Applications Programming Interface: A software intermediary or a
+      messenger which helps to talk to a different application or a database.
+    </h3>
+    <h3>
+      Most frontend applications need to communicate with a server over the HTTP
+      protocol and Angular provides us a HTTP Client Module which we can use for
+      that purpose
+    </h3>
+    <h3>
+      Most standard applications expose some API through which we can interact
+      with their application
+    </h3>
+  </div>
+  <div class="child-container">
+    <h2>The Demo</h2>
+    <div class="users">
+      <div class="user" *ngFor="let user of users">
+        <div class="user-img">
+          <img [src]="user.avatar_url" alt="" />
+        </div>
+        <div>
+          <div class="user-name">
+            <div class="user-btn">
+              <button (click)="goToGithub(user.html_url)">
+                Open Github
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3>
+      HttpClient will give as an observable which in turn we need to subscribe
+      to inorder to get the data.
+    </h3>
+    <h3>
+      Observables are an array of items, which arrive asynchronously over time.
+    </h3>
+    <h3>The subscribe method ca</h3>
+  </div>
+</div>
