@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SharedService } from '../shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-day2',
@@ -15,7 +16,7 @@ export class Day2Component {
   // The message from child component
   msgFromChild = '';
 
-  constructor(private sharedService: SharedService){}
+  constructor(private sharedService: SharedService, private router: Router) {}
   receiveMessage(msg: string) {
     this.msgFromChild = msg;
   }
@@ -74,7 +75,14 @@ export class Day2Component {
     /* When using the dependency injection
     
     NB: We have configured sharedService as a private variable of SharedService type */
-    this.output = this.sharedService.calculate(this.firstNum, this.secondNum)
+    this.output = this.sharedService.calculate(this.firstNum, this.secondNum);
   }
 
+  // Programmatic routing
+  goToPreviousPage() {
+    this.router.navigate(['day1']);
+  }
+  goToNextPage() {
+    this.router.navigate(['day3']);
+  }
 }

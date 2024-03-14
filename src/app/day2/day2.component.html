@@ -1,3 +1,7 @@
+<div class="navigation-container">
+  <button (click)="goToPreviousPage()">Previous</button>
+  <button (click)="goToNextPage()">Next</button>
+</div>
 <div class="float-container">
   <h1>{{ title }}</h1>
 
@@ -80,7 +84,7 @@
     <h2>Parent to Class communication</h2>
     <p>Parent Component in this case is day2Component</p>
     <input type="text" [(ngModel)]="channelNameInParent" />
-    
+
     <app-day2bchild
       [channelName]="channelNameInParent"
       (sendMessageEmitter)="receiveMessage($event)"
@@ -161,3 +165,4 @@
     </div>
   </div>
 </div>
+
