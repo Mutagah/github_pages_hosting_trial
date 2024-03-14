@@ -7,6 +7,7 @@ import { HomeComponent } from '../home/home.component';
 import { FirstTrialComponent } from '../first-trial/first-trial.component';
 import { Day3Component } from '../day3/day3.component';
 import { Day4Component } from '../day4/day4.component';
+import { PipesComponent } from '../pipes/pipes.component';
 
 // Routes an array in which we pass javascript objects
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'day3',
     component: Day3Component,
+  },
+  {
+    path: 'pipes',
+    component: PipesComponent,
   },
   {
     path: 'day4',

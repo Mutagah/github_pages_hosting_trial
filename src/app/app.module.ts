@@ -19,6 +19,8 @@ import { TemplateDrivenFormsComponent } from './template-driven-forms/template-d
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { Day4Component } from './day4/day4.component';
 import { RestfulApiConsumptionComponent } from './restful-api-consumption/restful-api-consumption.component';
+import { PipesComponent } from './pipes/pipes.component';
+import { InitialsPipe } from './initials.pipe';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { RestfulApiConsumptionComponent } from './restful-api-consumption/restfu
     ReactiveFormsComponent,
     Day4Component,
     RestfulApiConsumptionComponent,
+    PipesComponent,
+    InitialsPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule],
   providers: [],
